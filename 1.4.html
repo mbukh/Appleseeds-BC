@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web page</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
+
+        html,
+        body {
+            font-family: 'Arimo', sans-serif;
+        }
+
+        h1 {
+            color: rgb(147, 105, 0);
+            font-size: 3em;
+            margin: 0.1em 0em 0em;
+        }
+
+        h2 {
+            color: rgb(147, 105, 0);
+            font-size: 2em;
+            margin-bottom: 0.1em;
+        }
+
+        h3 {
+            font-size: 1.2em;
+            margin-bottom: 0.1em;
+        }
+
+        .title {
+            margin-bottom: 1em;
+            font-size: 1.1em;
+        }
+
+        .duration {
+            font-style: italic;
+        }
+
+        .photo {
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 50%;
+        }
+
+        .photo img {
+            width: 200px;
+            height: auto;
+        }
+
+        ul.info {
+            list-style-type: none;
+            padding: 0;
+            padding-inline-start: 5px;
+        }
+
+        ul.info>li:before {
+            content: "-";
+            padding-inline-end: 5px;
+        }
+
+        ul.details {
+            margin: 0.5em 0 1.5em 0;
+        }
+
+        ul.details {
+            list-style-type: none;
+            padding: 0;
+            padding-inline-start: 10px;
+        }
+
+        ul.details>li:before {
+            content: "-";
+            padding-inline-end: 5px;
+        }
+
+        .links ul>li {
+            list-style-type: none;
+        }
+
+        .links a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .links li {
+            display: inline-block;
+        }
+
+        .links img,
+        .links svg {
+            height: 30px;
+            padding-inline-end: 20px;
+            margin: 0;
+            transform: scale(1);
+            transition: all .2s ease-in-out;
+        }
+
+        .links img:hover,
+        .links svg:hover {
+            transition: all .2s ease-in-out;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>משה בוכמן</h1>
+    <div class="title">מתכנת, מדריך לתכנות</div>
+    <div class="photo"><img src="../1.4-images/moshe.jpeg" alt="" srcset=""></div>
+    <ul class="info">
+        <li>טלפון: 053-53-10-485</li>
+        <li>דוא"ל: mbukhman@gmail.com</li>
+        <li>אתר: <a href="http://mbukhman.com">http://mbukhman.com</a></li>
+    </ul>
+
+    <h2>ניסיון בהייטק</h2>
+    <h3>YAIZY-ALGORITHMICA</h3>
+    <span class="duration">מ- 2021 / מדריך מוביל</span>
+    <ul class="details">
+        <li>יוצר תוכן לימודי לקורסי Python ו-LUA(Roblox)</li>
+        <li>יוצר ומממש פתרונות לתקלות טכניות עבור לקוחות ועובדים</li>
+        <li>מנהל קורס תכנות בשפת Python</li>
+    </ul>
+    <h3>ABP BUSINESS AUTOMATIZATION</h3>
+    <span class="duration">2008 – 2010 / מנהל פרויקטים, בנייה וקידום אתרים</span>
+    <ul class="details">
+        <li>ניהול קשרי לקוחות</li>
+        <li>מנהל מוצר מרעיון עד השקת המוצר</li>
+        <li>מפקח של ה-CMS הפנימי של החברה C#/XML</li>
+    </ul>
+    <h3>D;)COM VOIP COMPANY</h3>
+    <span class="duration">2007 – 2008 / מהנדס ראשי</span>
+    <ul class="details">
+        <li>מהנדס רשת ושרת VOIP</li>
+        <li>מנהיג צוותי שירות לקוחות ותמיכ ה</li>
+        <li>מפתח שירותי תשלום במסחר אלקטרוני CGI ב- Perl</li>
+    </ul>
+
+    <div class="links">
+        <ul>
+            <li>
+                <a href="https://www.linkedin.com/in/mbukhman/">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" data-supported-dps="20x20"
+                        fill="currentColor" class="mercado-match" width="30" height="30" focusable="false">
+                        <title>LinkedIn app logo</title>
+                        <path
+                            d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z">
+                        </path>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/mbukh">
+                    <svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32"
+                        data-view-component="true" class="octicon octicon-mark-github v-align-middle">
+                        <path fill-rule="evenodd"
+                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+                        </path>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://facebook.com/mbukhman">
+                    <svg width="30" height="30" fill="none">
+                        <title>Facebook app logo</title>
+                        <path
+                            d="M30 15.091C30 6.756 23.285 0 15 0S0 6.756 0 15.091C0 22.625 5.484 28.868 12.656 30V19.454H8.848V15.09h3.808v-3.324c0-3.782 2.239-5.872 5.666-5.872 1.64 0 3.358.295 3.358.295v3.714h-1.893c-1.863 0-2.443 1.164-2.443 2.358v2.83h4.16l-.665 4.362h-3.495V30C24.516 28.868 30 22.625 30 15.091z"
+                            fill="currentColor"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <button>close x</button>
+
+</body>
+
+</html>
