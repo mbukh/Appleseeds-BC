@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7.1_buttons</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+        /* reset css */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        /* variables */
+        .big {
+            --width: 120px;
+            --height: 50px;
+            --font-size: 1em;
+        }
+
+        .small {
+            --width: 60px;
+            --height: 30px;
+            --font-size: 0.6em;
+        }
+
+        .fill {
+            --background: var(--color);
+            --border: none;
+            --background-hover: var(--color-hover);
+            --border-hover: none;
+        }
+
+
+        .border {
+            --background: none;
+            --border: 2px solid var(--color);
+            --background-hover: var(--color-hover);
+            --border-hover: 2px solid var(--color-hover);
+        }
+
+        .blue {
+            --color: #0C6CF8;
+            --color-hover: #1059B9;
+        }
+
+        .green {
+            --color: #00A238;
+            --color-hover: #007D41;
+        }
+
+        .red {
+            --color: #9D344A;
+            --color-hover: #FF0F16;
+        }
+
+        .darkYellow {
+            --color: #BAAC4A;
+            --color-hover: #FFBD00;
+        }
+
+        .yellow {
+            --color: #FFB91B;
+            --color-hover: #D59B2B;
+        }
+
+        .coral {
+            --color: #FF0E4E;
+            --color-hover: #E1224F;
+        }
+
+
+        .violet {
+            --color: #7B3571;
+            --color-hover: #C4157E;
+        }
+
+
+        .weekBlue {
+            --color: #3D98A4;
+            --color-hover: #00B98D;
+        }
+
+        /* styles */
+        body {
+            background-color: #153555;
+            font-family: 'Roboto', sans-serif;
+            font-size: 25px;
+            color: white;
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        button {
+            min-width: var(--width);
+            min-height: var(--height);
+            font-size: var(--font-size);
+            background: var(--background);
+            border: var(--border);
+            color: white;
+            margin: 30px 50px;
+            padding: 10px;
+        }
+
+        button:hover {
+            background: var(--background-hover);
+            border: var(--border-hover);
+        }
+
+        .flat {
+            border-radius: 0;
+        }
+
+        .round {
+            border-radius: 1.5em;
+        }
+    </style>
+</head>
+
+<body>
+    <div>Flat</div>
+    <button class="big flat fill blue">Register</button>
+    <button class="small flat fill yellow">Submit</button>
+    <div>Round</div>
+    <button class="big round fill green">Register</button>
+    <button class="small round fill coral">Submit</button>
+    <div>Flat Ghost</div>
+    <button class="big flat border red">Register</button>
+    <button class="small flat border violet">Submit</button>
+    <div>Round Ghost</div>
+    <button class="big round border darkYellow">Register</button>
+    <button class="small round border weekBlue">Submit</button>
+</body>
+
+</html>
