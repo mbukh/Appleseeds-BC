@@ -3,13 +3,133 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" page="IE=edge">
+    <meta name="viewport" page="width=device-width, initial-scale=1.0">
     <title>6.1_float_layout</title>
+    <style>
+        /* Reset css */
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            /* border: 1px dashed red; */
+        }
+
+        html {
+            --margin-reg: 5px;
+            --footer-height: 50px;
+            --width: 80vw;
+            --bottom-offset: calc(var(--footer-height) + var(--margin-reg) * 2);
+        }
+
+        body,
+        html {
+            width: 100vw;
+            height: 100vh;
+            background-color: white;
+        }
+
+        /* Structuring */
+        #container {
+            overflow: hidden;
+            margin: 0 auto;
+            height: 100vh;
+            width: var(--width);
+        }
+
+        header {
+            height: var(--footer-height);
+            margin: var(--margin-reg) 0;
+        }
+
+        #page {
+            height: calc(100vh - var(--bottom-offset));
+            padding-bottom: var(--bottom-offset);
+        }
+
+        aside {
+            float: left;
+            height: 100%;
+            margin-block-end: var(--margin-reg);
+            width: calc(calc(var(--width)/4) - var(--margin-reg));
+        }
+
+        main {
+            float: right;
+            height: 100%;
+            width: calc(calc(var(--width)/4*3));
+        }
+
+        footer {
+            height: var(--footer-height);
+            position: sticky;
+            bottom: var(--margin-reg);
+            margin-top: var(--margin-reg);
+            opacity: 80%;
+        }
+
+        /* Text align & colors */
+        header,
+        aside,
+        main,
+        footer {
+            border: 1px black solid;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+        }
+
+        header {
+            text-align: center;
+            background-color: #ff9f38;
+        }
+
+        aside {
+            text-align: left;
+            background-color: #448c3e;
+            position: relative;
+        }
+
+        main {
+            text-align: right;
+            background-color: #88548a;
+        }
+
+
+        footer {
+            text-align: center;
+            background-color: #356bdf;
+        }
+
+        header>div,
+        aside>div,
+        main>div,
+        footer>div {
+            width: 100%;
+        }
+    </style>
 </head>
 
 <body>
+    <div id="container">
+        <header>
+            <div>Header</div>
+        </header>
 
+        <section id="page">
+            <aside>
+                <div>Side</div>
+            </aside>
+
+            <main>
+                <div>Main</div>
+            </main>
+        </section>
+
+        <footer>
+            <div>Footer</div>
+        </footer>
+    </div>
 </body>
 
 </html>
