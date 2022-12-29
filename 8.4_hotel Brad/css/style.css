@@ -1,0 +1,147 @@
+/* reset css */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.7em;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h2 {
+    padding-bottom: 20px;
+}
+
+p {
+    margin: 10px 0;
+}
+
+.btn {
+    border: none;
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+.btn-dark {
+    background-color: var(--color-gray);
+    color: var(--color-white);
+}
+
+.btn-dark:hover {
+    background-color: var(--color-gray);
+    color: var(--color-gray);
+}
+
+.btn-light {
+    background-color: var(--color-white);
+    color: var(--color-gray);
+}
+
+.btn-light:hover {
+    background-color: var(--color-highlight);
+    color: var(--color-gray);
+}
+
+/* variables */
+
+html {
+    --color-gray: #333;
+    --color-light-gray: #444;
+    --color-white: #fff;
+    --color-highlight: #f1ba71;
+}
+
+/* utilities */
+
+.container {
+    margin: 0 auto;
+    max-width: 1100px;
+    overflow: auto;
+    padding: 0 20px;
+}
+
+.text-highlight {
+    color: var(--color-highlight);
+}
+
+.lead {
+    font-size: 1.3em;
+}
+
+/* navbar styling */
+
+#navbar {
+    background: var(--color-gray);
+    color: var(--color-white);
+}
+
+#navbar a {
+    color: var(--color-white);
+}
+
+#navbar a:hover {
+    color: var(--color-highlight);
+}
+
+#navbar h1.logo {
+    float: left;
+    padding-top: 20px;
+}
+
+#navbar ul {
+    float: right;
+}
+
+#navbar ul li {
+    float: left;
+}
+
+#navbar ul li a {
+    color: var(--color-white);
+    display: block;
+    padding: 20px;
+    text-align: center;
+}
+
+#navbar ul li a:hover,
+#navbar ul li a.current {
+    background-color: var(--color-light-gray);
+    color: var(--color-highlight);
+}
+
+/* showcase styling */
+
+#showcase {
+    background: url('../images/showcase.jpg') no-repeat center center / cover;
+    min-height: 600px;
+}
+
+#showcase .showcase-content {
+    margin-top: 170px;
+    text-align: center;
+    color: var(--color-white);
+}
+
+#showcase h1 {
+    font-size: 3.8em;
+    line-height: 1.2em;
+}
+
+#showcase .showcase-content p {
+    padding-bottom: 20px;
+    line-height: 1.7;
+}
