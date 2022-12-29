@@ -42,7 +42,7 @@ p {
 }
 
 .btn-dark:hover {
-    background-color: var(--color-gray);
+    background-color: var(--color-highlight);
     color: var(--color-gray);
 }
 
@@ -54,6 +54,11 @@ p {
 .btn-light:hover {
     background-color: var(--color-highlight);
     color: var(--color-gray);
+}
+
+.bg-dark {
+    background-color: var(--color-gray);
+    color: var(--color-white);
 }
 
 /* variables */
@@ -126,7 +131,7 @@ html {
 /* showcase styling */
 
 #showcase {
-    background: url('../images/showcase.jpg') no-repeat center center / cover;
+    background: url("../images/showcase.jpg") no-repeat center center / cover;
     min-height: 600px;
 }
 
@@ -144,4 +149,28 @@ html {
 #showcase .showcase-content p {
     padding-bottom: 20px;
     line-height: 1.7;
+}
+
+#home-info {
+    min-height: 400px;
+    overflow: auto;
+}
+
+#home-info .info-img {
+    float: left;
+    background: url("../images/photo-1.jpg") no-repeat;
+    width: 50%;
+    min-height: 400px;
+    height: 100%;
+}
+
+#home-info .info-content {
+    float: right;
+    width: 50%;
+    padding: 50px 30px;
+    text-align: center;
+}
+
+#home-info .info-content p {
+    padding-bottom: 30px;
 }
