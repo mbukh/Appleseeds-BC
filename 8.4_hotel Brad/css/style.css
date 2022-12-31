@@ -20,45 +20,12 @@ a {
 
 h1,
 h2,
-h2 {
+h3 {
     padding-bottom: 20px;
 }
 
 p {
     margin: 10px 0;
-}
-
-.btn {
-    border: none;
-    display: inline-block;
-    padding: 12px 25px;
-    font-size: 1.1em;
-    cursor: pointer;
-}
-
-.btn-dark {
-    background-color: var(--color-gray);
-    color: var(--color-white);
-}
-
-.btn-dark:hover {
-    background-color: var(--color-highlight);
-    color: var(--color-gray);
-}
-
-.btn-light {
-    background-color: var(--color-white);
-    color: var(--color-gray);
-}
-
-.btn-light:hover {
-    background-color: var(--color-highlight);
-    color: var(--color-gray);
-}
-
-.bg-dark {
-    background-color: var(--color-gray);
-    color: var(--color-white);
 }
 
 /* variables */
@@ -67,7 +34,8 @@ html {
     --color-gray: #333;
     --color-light-gray: #444;
     --color-white: #fff;
-    --color-highlight: #f1ba71;
+    --color-light: #f4f4f4;
+    --color-highlight: #f7c08a;
 }
 
 /* utilities */
@@ -87,6 +55,46 @@ html {
     font-size: 1.3em;
 }
 
+.btn {
+    border: none;
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--color-highlight);
+    color: var(--color-gray);
+}
+
+.btn-dark {
+    background-color: var(--color-gray);
+    color: var(--color-white);
+}
+
+.btn-light {
+    background-color: var(--color-light);
+    color: var(--color-gray);
+}
+
+.bg-dark {
+    background-color: var(--color-gray);
+    color: var(--color-white);
+}
+
+.bg-light {
+    background-color: var(--color-light);
+    color: var(--color-gray);
+}
+.bg-highlight {
+    background-color: var(--color-highlight);
+    color: var(--color-gray);
+}
+
+.clr {
+    clear: both;
+}
 /* navbar styling */
 
 #navbar {
@@ -152,16 +160,15 @@ html {
 }
 
 #home-info {
-    min-height: 400px;
-    overflow: auto;
+    overflow: hidden;
+    height: 400px;
 }
 
 #home-info .info-img {
     float: left;
     background: url("../images/photo-1.jpg") no-repeat;
     width: 50%;
-    min-height: 400px;
-    height: 100%;
+    min-height: 100%;
 }
 
 #home-info .info-content {
@@ -173,4 +180,25 @@ html {
 
 #home-info .info-content p {
     padding-bottom: 30px;
+}
+
+/* features */
+.box {
+    float: left;
+    width: 33.3%;
+    text-align: center;
+    padding: 50px;
+}
+
+.box i {
+    margin-bottom: 10px;
+}
+
+/* footer */
+
+#main-footer {
+    padding: 20px;
+    text-align: center;
+    background-color: var(--color-light-gray);
+    color: var(--color-white);
 }
