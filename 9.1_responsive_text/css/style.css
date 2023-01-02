@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    background: gray;
+    color: white;
+    text-align: center;
+    padding-top: 100px;
+}
+h1 {
+    display: none;
+}
+@media (max-width: 500px) {
+    body {
+        background-color: red;
+    }
+}
+/* smartphones */
+@media only screen and (max-width: 500px) {
+    body {
+        background-color: red;
+    }
+    #smartphone h1 {
+        display: block;
+    }
+}
+/* tablet */
+@media (min-width: 501px) and (max-width: 768px) {
+    body {
+        background-color: blue;
+    }
+    #tablet h1 {
+        display: block;
+    }
+}
+/* normal */
+@media (min-width: 769px) and (max-width: 1200px) {
+    body {
+        background-color: green;
+    }
+    #normal h1 {
+        display: block;
+    }
+}
+/* widescreen */
+@media (min-width: 1201px) {
+    body {
+        background-color: black;
+    }
+    #widescreen h1 {
+        display: block;
+    }
+}
+/* landscape */
+@media (max-height: 500px) {
+    body {
+        background-color: orange;
+    }
+    #landscape h1 {
+        display: block;
+    }
+}
