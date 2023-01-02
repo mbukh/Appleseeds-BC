@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Arimo&display=swap");
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    /* border: 1px solid red; */
+}
+
+html {
+    --max-size: 960px;
+    --min-size: 200px;
+    --font-base: 14px;
+    --h-color: #936900;
+    --link-color: #ffd260;
+}
+
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: "Arimo", sans-serif;
+    font-size: var(--font-base);
+    line-height: 1.5;
+}
+
+#container {
+    position: relative;
+    max-width: var(--max-size);
+    min-width: var(--min-size);
+    margin: auto;
+}
+
+header {
+    min-height: 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0px;
+    box-shadow: 0 1px 8px #ddd;
+}
+
+#nav-title {
+    margin-right: 10px;
+    font-size: 1.3em;
+    flex: 1;
+}
+
+nav {
+    flex: 3;
+}
+
+#navbar {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#navbar > li {
+    list-style: none;
+    display: inline-block;
+    padding: 0 20px;
+    flex: 3;
+}
+
+#navbar button {
+    color: #555;
+    background-color: #fff;
+    border: 1px solid black;
+    padding: 2px 5px;
+}
+
+#navbar button:hover {
+    color: white;
+    background-color: black;
+    cursor: pointer;
+}
+
+a {
+    color: black;
+}
+
+a:visited {
+    color: #6e6e6e;
+}
+
+main {
+    overflow: auto;
+}
+
+#top > * {
+    text-align: center;
+}
+
+h1 {
+    color: var(--h-color);
+    font-size: 2.5em;
+    margin: 0.2em 0em 0.2em;
+}
+
+h2 {
+    color: var(--h-color);
+    font-size: 1.6em;
+    margin: 0.5em 0;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.2em;
+    margin-bottom: 0.1em;
+}
+
+.title {
+    margin-bottom: 1em;
+    font-size: 1.1em;
+}
+
+.photo img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 1em;
+}
+
+#bio {
+    margin-top: 1.5em;
+    padding: 0 20px;
+    margin: 20px 0;
+    overflow: auto;
+}
+
+#bio > section {
+    float: right;
+    width: 50%;
+    padding: 0 10px 0 10px;
+}
+
+@media only screen and (max-width: 700px) {
+    #bio > section {
+        float: none;
+        width: 100%;
+    }
+}
+
+.duration {
+    font-style: italic;
+    color: #6e6e6e;
+}
+
+.info {
+    width: 100%;
+}
+
+.info ul {
+    width: fit-content;
+    margin: 0 auto;
+    text-align: start;
+    list-style-type: none;
+}
+
+ul.details {
+    list-style-type: none;
+    margin: 0.5em 0 1.5em 0;
+    padding-inline-start: 10px;
+}
+
+ul.details > li {
+    list-style-position: inside;
+    text-indent: -1em;
+}
+
+ul.details > li:before {
+    content: "-";
+    padding-inline-end: 5px;
+}
+
+#social {
+    clear: both;
+    margin-bottom: 30px;
+}
+
+#social ul {
+    text-align: center;
+    list-style-type: none;
+}
+
+#social ul > li {
+    margin: 0 10px;
+}
+
+#social a {
+    text-decoration: none;
+    color: black;
+}
+
+#social li {
+    display: inline-block;
+}
+
+#social img,
+#social svg {
+    height: 30px;
+    transform: scale(1);
+    opacity: 80%;
+    transition: all 0.2s ease-in-out;
+}
+
+#social img:hover,
+#social svg:hover {
+    transform: scale(1.1);
+    opacity: 100%;
+    transition: all 0.2s ease-in-out;
+}
+
+footer {
+    position: absolute;
+    top: 60px;
+    left: 10px;
+}
+
+#hire {
+    background-color: #444;
+    border: 1px var(--link-color) solid;
+    padding: 5px 15px;
+    color: white;
+    cursor: pointer;
+}
