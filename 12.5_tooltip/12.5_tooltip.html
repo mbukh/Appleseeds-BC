@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12.5_tooltip</title>
+    <style>
+        :root {
+            --cool-border-color: #c23215;
+        }
+
+        * {
+            box-sizing: border-box;
+            /* padding: 0;
+            margin: 0; */
+        }
+
+        html,
+        body {
+            font-size: clamp(12px, 18px, 24px);
+            /* min-width: 200px; */
+        }
+
+        a {
+            text-decoration: none;
+            color: red;
+        }
+
+        a[data-tooltip]:not([data-tooltip=""]) {
+            border-bottom: 1px dotted red;
+            cursor: help;
+        }
+
+        .wrapper {
+            width: min(900px, 80%);
+            margin-inline: auto;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        [data-tooltip] {
+            position: relative;
+            display: inline-block;
+        }
+
+        [data-tooltip]:not([data-tooltip=""])::after {
+            content: attr(data-tooltip) "";
+
+            pointer-events: none;
+            cursor: none;
+
+            display: inline-block;
+            padding: 5px 10px 20px;
+            background: rgb(255, 228, 23);
+
+            white-space: pre;
+            font-size: 1rem;
+            color: #333;
+            text-align: center;
+
+            border-radius: 3px;
+            clip-path: polygon(0 0, 100% 0, 100% 80%, 60% 80%, 50% 100%, 40% 80%, 0 80%);
+
+            position: absolute;
+            z-index: 999;
+            bottom: 100%;
+            right: -50%;
+            transform-origin: bottom center;
+
+            transform: scale(0), translateX(-150%);
+            opacity: 0;
+            transition: all 0.3s ease-out;
+
+        }
+
+        [data-tooltip]:not([data-tooltip=""]):hover::after {
+            transform: scale(1);
+            opacity: 0.95;
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam itaque magni tempora, alias omnis,
+            voluptate,
+            vel repellendus incidunt magnam <a href="#" data-tooltip="check this out">reprehenderit</a> neque? Sequi
+            facere
+            placeat blanditiis expedita saepe aliquam
+            numquam est qui ipsum eius. Mollitia impedit perferendis cum cumque numquam nulla hic similique soluta nam
+            qui,
+            praesentium dolorem quis sit voluptatibus, odit placeat dicta repellendus, maxime adipisci porro quibusdam
+            ex
+            neque quae <a href="#" data-tooltip="">voluptatum</a>. Veniam nulla consequatur culpa explicabo laudantium
+            suscipit. Adipisci nihil accusantium
+            ipsa numquam tempora, exercitationem cupiditate nam quidem, alias cumque eos rerum soluta minus nobis. Animi
+            ad,
+            facere praesentium excepturi culpa exercitationem magni error <a href="#"
+                data-tooltip="ho-ho-ho&#xa;Happy New Year">corporis</a>
+            minima natus rem in!</p>
+
+        <p>Tempore cupiditate minima itaque error dolore aliquid cumque inventore neque nemo, assumenda ut consequuntur,
+            tempora voluptatibus velit placeat vitae odit. Eos iste aliquam velit neque suscipit fugit vero nihil harum
+            iusto enim culpa <a href="#" data-tooltip="my value">assumenda</a> explicabo delectus non quasi illo quidem,
+            blanditiis voluptate quaerat soluta.
+            Delectus autem nulla ullam ex exercitationem. Dolores corrupti, veniam recusandae quos placeat sint nemo
+            asperiores a quisquam quas deserunt iusto, tempora fuga! Adipisci, autem? Aspernatur totam aliquam culpa eos
+            voluptate harum non, facere vitae quisquam, <a href="#">quibusdam</a> dolore odio architecto, ex deserunt
+            animi
+            consequatur ad
+            magni aut sed sunt. Iure minus sunt dolore obcaecati distinctio, assumenda similique?</p>
+    </div>
+</body>
+
+</html>
