@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12.4_cool_border</title>
+    <style>
+        :root {
+            --cool-border-color: #c23215;
+        }
+
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        html,
+        body {
+            font-size: 18px;
+            /* min-width: 200px; */
+        }
+
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: max(40vh, 250px);
+        }
+
+        #main {
+            height: clamp(100px, 400px, 50vw);
+            width: clamp(150px, 600px, 70vw);
+            margin: 20px;
+
+            background-color: black;
+
+            color: white;
+            font-size: 1.7rem;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            width: 70%;
+            height: 70%;
+            /* background-color: #333; */
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            position: relative;
+        }
+
+        .box::before {
+            content: "";
+
+            position: absolute;
+            top: 0;
+            bottom: 0;
+
+            /* thickness of the border */
+            --b: 4px;
+            /* color of the border */
+            --c: var(--cool-border-color);
+            /* width of border */
+            --w: 40px;
+
+            border: var(--b) solid #0000;
+            /* space for the border */
+            --_g: #0000 90deg, var(--c) 0;
+            --_p: var(--w) var(--w) border-box no-repeat;
+            background:
+                conic-gradient(from 90deg at top var(--b) left var(--b), var(--_g)) 0 0 / var(--_p),
+                conic-gradient(from 180deg at top var(--b) right var(--b), var(--_g)) 100% 0 / var(--_p),
+                conic-gradient(from 0deg at bottom var(--b) left var(--b), var(--_g)) 0 100% / var(--_p),
+                conic-gradient(from -90deg at bottom var(--b) right var(--b), var(--_g)) 100% 100% / var(--_p);
+
+            display: block;
+            width: calc(100% - var(--b)*2);
+            height: calc(100% - var(--b)*2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center">
+        <section id="main">
+            <div class="box">
+                Cool border
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
