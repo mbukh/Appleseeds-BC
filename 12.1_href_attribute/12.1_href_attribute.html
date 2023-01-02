@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            font-size: 18px;
+        }
+
+        a {
+            display: inline-block;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 1px dotted #333;
+        }
+
+        a[target='_blank'] span::after {
+            content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
+            margin: 0 0 0 0.4rem;
+        }
+
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+        }
+
+        #main {
+            width: clamp(400px, 600px, 70vw);
+        }
+
+        a.mbukhman::after {
+            content: "(https://mbukhman.com)";
+            font-size: 0.8rem;
+            margin-left: 0.2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center">
+        <section id="main">
+            Lorem ipsum dolor,
+            <a class="mbukhman" href="https://mbukhman.com" target="_blank">
+                <span>sit amet consectetur</span>
+            </a>
+            adipisicing
+            elit. Inventore
+            itaque
+            nisi optio consequuntur quisquam sint dolorum maiores, error debitis repellat!
+        </section>
+    </div>
+</body>
+
+</html>
