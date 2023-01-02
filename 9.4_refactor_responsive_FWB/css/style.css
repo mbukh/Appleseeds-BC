@@ -136,13 +136,6 @@ h3 {
     padding: 0 10px 0 10px;
 }
 
-@media only screen and (max-width: 700px) {
-    #bio > section {
-        float: none;
-        width: 100%;
-    }
-}
-
 .duration {
     font-style: italic;
     color: #6e6e6e;
@@ -225,4 +218,19 @@ footer {
     padding: 5px 15px;
     color: white;
     cursor: pointer;
+}
+
+/* Responsiveness */
+
+@media only screen and (max-width: 700px) {
+    #bio > section {
+        float: none;
+        width: 100%;
+    }
+    .photo img {
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+        margin-bottom: 1em;
+    }
 }
