@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10.1_responsive_typography</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background: #333;
+            color: white;
+            font-size: 16px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 700;
+        }
+
+        h1 {
+            display: inline-block;
+            width: 100%-20px;
+            margin-top: 10px;
+            margin-left: 20px;
+
+            /* fluidity */
+            font-size: calc(2rem + 6 * ((100vw - 320px) / 680));
+
+        }
+
+        #side-menu {
+            height: 100vw;
+            background: linear-gradient(#777, #333);
+            width: 30vw;
+            float: left;
+        }
+
+        #side-menu ul {
+            list-style: none;
+            margin: 20px 30px;
+            line-height: 2rem;
+        }
+
+        .boxes-wrapper::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .box {
+            width: calc(100% / 4 - 110px);
+            margin: 10px;
+            border: 2px dashed orange;
+            padding: 5px;
+            float: left;
+
+            /* fluidity */
+            font-size: calc(0.5rem + 7 * ((100vw - 300px) / 680));
+        }
+
+        @media (max-width: 960px) {
+            .box {
+                float: none;
+                width: calc(100vw - 20px);
+                padding: 20px 40px;
+
+                /* fluidity */
+                font-size: calc(0.7rem + 7 * ((100vw - 300px) / 680));
+            }
+
+            h1 {
+                /* fluidity */
+                font-size: calc(1.5rem + 6 * ((100vw - 320px) / 680));
+            }
+
+            #side-menu {
+                display: none;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <aside id="side-menu">
+        <ul>
+            <li>Lorem.</li>
+            <li>Deserunt!</li>
+            <li>Ipsam.</li>
+            <li>Ab!</li>
+            <li>Commodi.</li>
+            <li>Vero.</li>
+            <li>Expedita?</li>
+            <li>Magni!</li>
+            <li>Optio.</li>
+            <li>Consequatur?</li>
+            <li>Sunt!</li>
+            <li>Perferendis.</li>
+            <li>Dolor.</li>
+            <li>Consectetur.</li>
+            <li>Accusamus!</li>
+        </ul>
+    </aside>
+    <div class="container">
+        <h1>This is a liquid title and liquid text.</h1>
+        <div class="boxes-wrapper">
+            <div class="box" id="box1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex eos cupiditate est
+                esse
+                velit rerum in exercitationem vitae veniam itaque?</div>
+            <div class="box" id="box2">Quaerat alias nihil ab illum? Ipsam, iste nisi? Unde nesciunt dolorum eos
+                voluptates
+                accusantium voluptate quibusdam ratione vero magni veniam!</div>
+            <div class="box" id="box3">Doloremque dolore, illo aliquam eos, minima obcaecati accusamus, iste impedit
+                quis
+                beatae qui earum alias. Accusantium quaerat similique aperiam blanditiis?</div>
+            <div class="box" id="box4">Facere illum repellat pariatur numquam beatae obcaecati quod. Sit expedita
+                officia et
+                earum laboriosam officiis, quos voluptatem magni vel harum.</div>
+        </div>
+    </div>
+</body>
+
+</html>
