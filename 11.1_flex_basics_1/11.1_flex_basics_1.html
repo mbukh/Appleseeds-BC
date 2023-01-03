@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11.1_flex_basics_1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box-container:first-of-type {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        .box-container:last-of-type {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .box {
+            width: 25vw;
+            height: 20vw;
+            padding: 10px;
+        }
+
+        .box1 {
+            background-color: green;
+        }
+
+        .box2 {
+            background-color: blue;
+        }
+
+        .box3 {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box-container">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+    </div>
+    <br />
+    <div class="box-container">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+    </div>
+</body>
+
+</html>
