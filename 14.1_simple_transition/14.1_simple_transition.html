@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14.1_simple_transition</title>
+    <style>
+        :root {
+            --box-size: 40rem;
+        }
+
+        body {
+            font-size: 10px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        #body-container {
+            width: 100vw;
+            height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background-color: #777;
+        }
+
+        .box {
+            width: var(--box-size);
+            height: var(--box-size);
+            background-color: darkcyan;
+
+            position: relative;
+
+            font-size: 5rem;
+            color: white;
+        }
+
+        .box::before {
+            content: "FOO";
+
+            display: block;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+
+            position: absolute;
+
+            background-color: darkblue;
+
+            transition: width 2s ease;
+        }
+
+        .box:hover::before {
+            width: 0;
+            transition: width 2s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="body-container">
+
+        <div class="box">BAR</div>
+
+    </div>
+
+</body>
+
+</html>
