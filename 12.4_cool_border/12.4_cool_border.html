@@ -9,6 +9,7 @@
     <style>
         :root {
             --cool-border-color: #c23215;
+            --cool-box-color: #2c2929;
         }
 
         * {
@@ -21,13 +22,11 @@
         body {
             font-size: 18px;
             /* min-width: 200px; */
-        }
-
-        .center {
             display: flex;
             justify-content: center;
             align-items: center;
             height: max(40vh, 250px);
+            background-color: rgb(97, 47, 47);
         }
 
         #main {
@@ -35,7 +34,8 @@
             width: clamp(150px, 600px, 70vw);
             margin: 20px;
 
-            background-color: black;
+            background-color: #2c2929;
+            border: 1px solid #555;
 
             color: white;
             font-size: 1.7rem;
@@ -71,7 +71,7 @@
             /* width of border */
             --w: 40px;
 
-            border: var(--b) solid #0000;
+            border: var(--b) solid transparent;
             /* space for the border */
             --_g: #0000 90deg, var(--c) 0;
             --_p: var(--w) var(--w) border-box no-repeat;
@@ -89,12 +89,10 @@
 </head>
 
 <body>
-    <div class="center">
-        <section id="main">
-            <div class="box">
-                Cool border
-            </div>
-        </section>
+    <div id="main">
+        <div class="box">
+            Cool border
+        </div>
     </div>
 </body>
 
