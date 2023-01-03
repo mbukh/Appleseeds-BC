@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11.5_flex_navbar</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-size: 16px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        #nav-wrapper {
+            background-color: #ccc;
+            border: 1px solid #333;
+        }
+
+        #nav {
+            padding: 5px 10px;
+            color: rgb(47, 63, 98);
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #nav ul,
+        #nav h1 {
+            text-transform: uppercase;
+        }
+
+        #nav ul {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 690px) {
+            #nav {
+                flex-flow: column;
+                padding: 20px 10px;
+            }
+
+            #nav ul {
+                margin-top: 2rem;
+                flex-flow: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="body-container">
+        <div id="nav-wrapper">
+            <nav id="nav">
+                <h1>Appleseeds</h1>
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Portfolio</li>
+                    <li>Contact</li>
+                </ul>
+            </nav>
+        </div>
+
+
+    </div>
+</body>
+
+</html>
