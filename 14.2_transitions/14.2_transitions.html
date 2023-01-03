@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14.2_transitions</title>
+    <style>
+        /* variables */
+
+        :root {
+            --box-w: 20rem;
+            --box-h: 10rem;
+            --anim-time: 0.5s;
+        }
+
+        /* reset */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* main style */
+
+        body {
+            font-size: 10px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        #body-container {
+            width: 100vw;
+            height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background-color: #aaa;
+        }
+
+        #boxes-wrapper {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+
+            gap: 5rem;
+        }
+
+        /* Utilities */
+
+        .box-text {
+            position: absolute;
+        }
+
+        /* all box style */
+
+        .box {
+            width: var(--box-w);
+            height: var(--box-h);
+            padding: 1rem;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            /* background-color: darkcyan; */
+            outline: 0.3rem solid black;
+            /* background-color: transparent; */
+
+            position: relative;
+
+            font-size: 3rem;
+            color: black;
+
+            overflow: hidden;
+        }
+
+        /* all box before template */
+
+        .box::before {
+            content: "";
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 100%;
+            height: 100%;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            transition: all var(--anim-time) ease;
+        }
+
+        .box:hover::before {
+            transition: all var(--anim-time) ease;
+        }
+
+        /* box1 */
+
+        #boxes-wrapper .box:nth-child(1)::before {
+            content: "Cool!";
+            background-color: red;
+            transform: translateY(-100%);
+            z-index: 1;
+        }
+
+        #boxes-wrapper .box:nth-child(1):hover::before {
+            transform: translateY(0);
+        }
+
+        /* box2 */
+
+        #boxes-wrapper .box:nth-child(2)::before {
+            content: "";
+            background-color: blue;
+            transform: translateX(-100%);
+            /* z-index: 1; */
+        }
+
+        #boxes-wrapper .box:nth-child(2):hover::before {
+            transform: translateX(0);
+        }
+
+        /* box3 */
+
+        #boxes-wrapper .box:nth-child(3)::before {
+            content: "";
+            background-color: yellow;
+            transform: rotate(0.25turn);
+            transform-origin: top left;
+            /* z-index: 1; */
+        }
+
+        #boxes-wrapper .box:nth-child(3):hover::before {
+            transform: rotate(0);
+        }
+
+        /* box4 */
+
+        #boxes-wrapper .box:nth-child(4)::before {
+            content: "Scale";
+            background-color: black;
+            color: white;
+            z-index: 1;
+            scale: 5;
+            opacity: 0;
+        }
+
+        #boxes-wrapper .box:nth-child(4):hover::before {
+            scale: 1;
+            opacity: 1;
+        }
+
+        /* box5 */
+
+        #boxes-wrapper .box:nth-child(5) {
+            transform: skew(0);
+
+        }
+
+        #boxes-wrapper .box:nth-child(5):hover {
+            transform: skew(0, -10deg);
+
+        }
+
+        #boxes-wrapper .box:nth-child(5) .box-text {
+            transform: skew(0);
+
+        }
+
+        #boxes-wrapper .box:nth-child(5):hover .box-text {
+            transform: skew(0, 20deg);
+
+
+        }
+
+        #boxes-wrapper .box:nth-child(5)::before {
+            content: "";
+            background-color: maroon;
+            transform: rotate3d(0);
+            scale: 0;
+            transition: all var(--anim-time) ease, scale calc(var(--anim-time)/2) ease;
+        }
+
+        #boxes-wrapper .box:nth-child(5):hover::before {
+            transform: rotate3d(1, 0.5, 0.5, 1turn);
+            scale: 1;
+            transition: all var(--anim-time) ease, scale calc(var(--anim-time)/2) ease;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="body-container">
+        <div id="boxes-wrapper">
+            <div class="box" id="bx1">
+                <span class="box-text">TranslateY</span>
+            </div>
+            <div class="box" id="bx2">
+                <span class="box-text">TranslateX</span>
+            </div>
+            <div class="box" id="bx3">
+                <span class="box-text">Rotate</span>
+            </div>
+            <div class="box" id="bx4">
+                <span class="box-text">Scale</span>
+            </div>
+            <div class="box" id="bx5">
+                <span class="box-text">Skew</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
