@@ -1,0 +1,195 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* variables */
+
+:root {
+    --main-color: #213874;
+    --alt-color: #fff;
+    --hl-color: #1cbc9a;
+}
+
+/* common styles */
+
+body {
+    background: var(--alt-color);
+    color: var(--main-color);
+    font-size: clamp(1vw, 16px, 8vw);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-top: 1.5rem;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+p {
+    margin: 20px 0;
+}
+
+ul {
+    list-style: disc;
+}
+
+ul li {
+    margin-left: 40px;
+    margin-bottom: 20px;
+}
+
+/* Utils */
+
+.title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* header */
+
+#header {
+    width: 100vw;
+    height: 250px;
+    position: relative;
+}
+
+#header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: url("../img/toppng.com-web-page-dividers-png-vector-web-page-dividers-2980x683.png") left bottom/cover;
+    opacity: 30%;
+}
+
+#header .header-container {
+    padding-top: 1.5rem;
+    padding-right: 5%;
+    padding-left: 40%;
+}
+
+#header .header-container h1 {
+    max-width: 30rem;
+}
+
+/* main */
+
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 5%;
+    margin: 50px 30px 30px;
+}
+
+/* info */
+#info {
+    margin-bottom: 3rem;
+}
+
+#info h2 {
+    margin-top: 0;
+}
+
+/* form */
+
+.form-wrapper {
+    background-color: var(--main-color);
+    color: var(--alt-color);
+    border-radius: 15px;
+    padding: 10px 40px;
+    min-width: max(25vw, 300px);
+}
+
+#main-form .form-group {
+    margin-bottom: 20px;
+}
+
+#main-form .form-group:last-child {
+    display: flex;
+    justify-content: center;
+}
+
+#main-form label {
+    display: block;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+    font-weight: 100;
+    opacity: 0.8;
+}
+
+#main-form input,
+#main-form textarea {
+    display: block;
+    width: 100%;
+    height: 2.5rem;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    padding: 0.3rem;
+
+    font-size: 1rem;
+    color: var(--main-color);
+    letter-spacing: 0.02rem;
+    word-spacing: 0.1rem;
+}
+
+#main-form input:focus,
+#main-form textarea:focus {
+    outline: 1px solid var(--hl-color);
+}
+
+#main-form input::placeholder,
+#main-form textarea::placeholder {
+    opacity: 0.7;
+}
+
+#main-form textarea {
+    height: 4rem;
+}
+
+#main-form [type="submit"] {
+    width: 100%;
+    height: 2rem;
+
+    background-color: var(--hl-color);
+    border-radius: 5rem;
+
+    margin-top: 10px;
+
+    cursor: pointer;
+
+    font-weight: 700;
+    color: var(--alt-color);
+
+    transition: width 0.3s ease;
+}
+
+#main-form [type="submit"]:hover {
+    width: 80%;
+    transition: width 0.3s ease;
+}
+
+
+/* Media queries */
+
+@media screen and (max-width: 960px) {
+    main {
+        flex-wrap: wrap;
+    }
+
+    .form-wrapper {
+        width: 100%;
+    }
+}
