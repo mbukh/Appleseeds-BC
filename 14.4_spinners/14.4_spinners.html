@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14.4_spinners</title>
+    <style>
+        :root {
+            --sp-color: #aaa;
+            --sp-hl-color: #ffbb1b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-size: 16px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+            width: 100vw;
+            height: 100vh;
+
+            color: #fff;
+            background-color: #000;
+        }
+
+        #body-container {
+            width: 100%;
+            height: 100%;
+
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .loader span {
+            display: none;
+        }
+
+        /* spinners */
+
+        /* Ideas from: https://cssloaders.github.io/ */
+
+        /* overall circular animation */
+
+        @keyframes rotation {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* spinner #1 */
+
+        #spinner1 {
+            width: 6rem;
+            height: 6rem;
+
+            border-radius: 50%;
+            border: 0.3rem solid var(--sp-color);
+            border-bottom-color: #e3a515;
+
+            animation: rotation 1.5s linear infinite;
+        }
+
+        /* spinner #2 */
+
+        #spinner2 {
+            width: 6rem;
+            height: 6rem;
+
+            border-radius: 50%;
+            border-top: 0.3rem solid #e3a515;
+            border-right: 0.3rem solid transparent;
+
+            animation: rotation 1.5s linear infinite;
+        }
+
+        /* spinner #3 */
+
+        #spinner3 {
+            --sp-size: 1.2rem;
+            --offset: calc(var(--sp-size) * 2);
+
+            width: var(--sp-size);
+            height: var(--sp-size);
+
+            border-radius: 50%;
+
+            background: var(--sp-color);
+            /* box-shadow: left shadow circle  ,  right shadow circle */
+            box-shadow: calc(var(--offset) * -1) 0 var(--sp-color), var(--offset) 0 var(--sp-color);
+
+            animation: dotsShadowPulsed 1.5s ease-out infinite;
+        }
+
+        @keyframes dotsShadowPulsed {
+
+            0%,
+            20% {
+                background: var(--sp-color);
+                box-shadow: calc(var(--offset) * -1) 0 var(--sp-color), var(--offset) 0 var(--sp-color);
+
+            }
+
+            30%,
+            40% {
+                background: var(--sp-color);
+                box-shadow: calc(var(--offset) * -1) 0 var(--sp-hl-color), var(--offset) 0 var(--sp-color);
+            }
+
+            50%,
+            60% {
+                background: var(--sp-hl-color);
+                box-shadow: calc(var(--offset) * -1) 0 var(--sp-color), var(--offset) 0 var(--sp-color);
+            }
+
+            70%,
+            80% {
+                background: var(--sp-color);
+                box-shadow: calc(var(--offset) * -1) 0 var(--sp-color), var(--offset) 0 var(--sp-hl-color);
+            }
+        }
+
+        /* spinner #4 */
+
+        /* regular scale on main tag scales everything 
+                to the middle use shadows instead */
+
+        #spinner4,
+        #spinner4:before,
+        #spinner4:after {
+            --sp-size: 1.2rem;
+            --offset: calc(var(--sp-size) * -2);
+
+
+            width: var(--sp-size);
+            height: var(--sp-size);
+
+            border-radius: 50%;
+            background-color: transparent;
+
+            animation-fill-mode: both;
+            animation: bblFadInOut 1.8s infinite ease-in-out;
+        }
+
+        #spinner4 {
+            position: relative;
+            transform: translateY(-100%);
+            animation-delay: -0.16s;
+        }
+
+        #spinner4:before,
+        #spinner4:after {
+            content: '';
+            position: absolute;
+            top: 0;
+        }
+
+        #spinner4:before {
+            left: var(--offset);
+            animation-delay: -0.32s;
+        }
+
+        #spinner4:after {
+            right: var(--offset);
+        }
+
+        @keyframes bblFadInOut {
+
+            0%,
+            80%,
+            100% {
+                box-shadow: 0 calc(var(--sp-size) + 1px) 0 calc(var(--sp-size) * -1) var(--sp-hl-color);
+            }
+
+            40% {
+                box-shadow: 0 calc(var(--sp-size) + 1px) 0 0 var(--sp-hl-color);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="body-container">
+        <div id="spinner1" class="loader"><span>Loading...</span></div>
+        <div id="spinner2" class="loader"><span>Loading...</span></div>
+        <div id="spinner3" class="loader"><span>Loading...</span></div>
+        <div id="spinner4" class="loader"><span>Loading...</span></div>
+    </div>
+
+</body>
+
+</html>
