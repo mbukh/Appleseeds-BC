@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14.3_navbar_animation</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-size: 16px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+            width: 100vw;
+            height: 100vh;
+
+            color: #333;
+            background-color: #bbb;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        #nav-wrapper {
+            display: flex;
+            justify-content: center;
+
+            margin-top: 1rem
+        }
+
+        ul#nav {
+            display: flex;
+            justify-content: space-between;
+            gap: 0.1rem;
+
+            list-style: none;
+
+            font-size: 1.5rem;
+        }
+
+        ul#nav>li {
+            position: relative;
+            overflow: hidden;
+        }
+
+        ul#nav>li a {
+            display: block;
+            width: 100%;
+            height: 100%;
+
+            padding: 10px 10px;
+        }
+
+        /* Nav Animation */
+
+        ul#nav>li {
+            --width: 0;
+            --opacity: 0;
+        }
+
+        ul#nav>li:hover {
+            --width: 100%;
+            --opacity: 1;
+        }
+
+        ul#nav>li::before,
+        ul#nav>li::after {
+            content: "";
+
+            position: absolute;
+            z-index: 1;
+
+            height: 0.1rem;
+            background-color: #000;
+
+            width: var(--width);
+            opacity: var(--opacity);
+            transition: all 0.3s ease-in-out;
+        }
+
+
+        ul#nav>li::before {
+            top: 0;
+            left: 0;
+        }
+
+        ul#nav>li::after {
+            bottom: 0;
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="nav-wrapper">
+        <ul id="nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+</body>
+
+</html>
