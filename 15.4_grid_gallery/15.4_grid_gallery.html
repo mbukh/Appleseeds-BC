@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15.4_grid_gallery</title>
+    <style>
+        /*
+        Insipred by:
+        https://github.com/an-object-is-a/html-css-js-pinterest-layout/blob/main/index.html
+        */
+
+        :root {
+            --rows-count: 16;
+            --cols-count: 16;
+
+            --col-size: calc(100% / var(--cols-count) - var(--gap));
+            --row-size: var(--card-size);
+
+            --gap: 10px;
+
+            --card-span-w: 1;
+            --card-span-h: 2;
+
+            --span-w: calc(2 * var(--card-span-w));
+            --span-h: calc(2 * var(--card-span-h));
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+
+            font-size: 62.5%;
+
+            color: #333;
+            background-color: #eee;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333
+        }
+
+        #body-container {
+            width: 100%;
+            height: 100%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #gallery-grid {
+            padding: var(--gap);
+            gap: var(--gap);
+
+            display: grid;
+            grid-template-columns: repeat(auto-fit, var(--col-size));
+            grid-auto-rows: var(--row-size);
+            justify-content: center;
+        }
+
+        .image-box {
+            grid-column-end: span var(--span-w);
+            grid-row-end: span var(--span-h);
+        }
+
+        #gallery-grid img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (min-width: 500px) {
+            :root {
+                --row-size: 3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="body-container">
+
+        <div id="gallery-grid">
+
+            <div class="image-box" style="--card-span-w: inherit;--card-span-h: inherit;">
+                <a href="./img/1.jpeg">
+                    <img src="./img/1.jpeg" alt="image #1">
+                </a>
+            </div>
+            <div class="image-box" style="--card-span-w: inherit;--card-span-h: inherit;">
+                <a href="./img/2.jpeg">
+                    <img src="./img/2.jpeg" alt="image #2">
+                </a>
+            </div>
+            <div class="image-box" style="--card-span-w: inherit;--card-span-h: inherit;">
+                <a href="./img/3.jpeg">
+                    <img src="./img/3.jpeg" alt="image #3">
+                </a>
+            </div>
+            <div class="image-box" style="--card-span-w: inherit;--card-span-h: inherit;">
+                <a href="./img/4.jpeg">
+                    <img src="./img/4.jpeg" alt="image #4">
+                </a>
+            </div>
+            <div class="image-box" style="--card-span-w: inherit;--card-span-h: inherit;">
+                <a href="./img/5.jpeg">
+                    <img src="./img/5.jpeg" alt="image #5">
+                </a>
+            </div>
+            <div class="image-box" style="--card-span-w: inherit;--card-span-h: inherit;">
+                <a href="./img/6.jpeg">
+                    <img src="./img/6.jpeg" alt="image #6">
+                </a>
+            </div>
+            <div class="image-box" style="--card-span-w: inherit;--card-span-h: inherit;">
+                <a href="./img/7.jpeg">
+                    <img src="./img/7.jpeg" alt="image #7">
+                </a>
+            </div>
+            <div class="image-box" style="--card-span-w: inherit;--card-span-h: inherit;">
+                <a href="./img/8.jpeg">
+                    <img src="./img/8.jpeg" alt="image #8">
+                </a>
+            </div>
+            <div class="image-box" style="--card-span-w: inherit;--card-span-h: inherit;">
+                <a href="./img/9.jpeg">
+                    <img src="./img/9.jpeg" alt="image #9">
+                </a>
+            </div>
+            <div class="image-box" style="--card-span-w: inherit;--card-span-h: inherit;">
+                <a href="./img/10.jpeg">
+                    <img src="./img/10.jpeg" alt="image #10">
+                </a>
+            </div>
+            <div class="image-box" style="--card-span-w: inherit;--card-span-h: inherit;">
+                <a href="./img/11.jpeg">
+                    <img src="./img/11.jpeg" alt="image #11">
+                </a>
+            </div>
+            <div class="image-box" style="--card-span-w: inherit;--card-span-h: inherit;">
+                <a href="./img/12.jpeg">
+                    <img src="./img/12.jpeg" alt="image #12">
+                </a>
+            </div>
+            <div class="image-box" style="--card-span-w: inherit;--card-span-h: inherit;">
+                <a href="./img/13.jpeg">
+                    <img src="./img/13.jpeg" alt="image #13">
+                </a>
+            </div>
+            <div class="image-box" style="--card-span-w: inherit;--card-span-h: inherit;">
+                <a href="./img/14.jpeg">
+                    <img src="./img/14.jpeg" alt="image #14">
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>
