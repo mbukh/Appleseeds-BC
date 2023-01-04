@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15.1_grid_basics</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+
+            background-color: #333;
+        }
+
+        #body-grid {
+            display: grid;
+            gap: 10px;
+
+            min-height: 30vh;
+            padding: 10px;
+        }
+
+        @media (min-width: 600px) {
+            #body-grid {
+                grid-template-rows: min-content 1fr min-content;
+                grid-template-areas:
+                    'logo   logo    nav     nav'
+                    'aside  main    main    main'
+                    'footer footer  footer  footer';
+            }
+        }
+
+        #body-grid>* {
+            border-radius: 1rem;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 10px
+        }
+
+        #body-grid>*:nth-child(1) {
+            background-color: rgb(236, 100, 100);
+            grid-area: logo;
+        }
+
+        #body-grid>*:nth-child(2) {
+            background-color: rgb(100, 166, 236);
+            grid-area: nav;
+        }
+
+        #body-grid>*:nth-child(3) {
+            background-color: rgb(100, 236, 123);
+            grid-area: main;
+        }
+
+        #body-grid>*:nth-child(4) {
+            background-color: rgb(236, 100, 184);
+            grid-area: aside;
+        }
+
+        #body-grid>*:nth-child(5) {
+            background-color: rgb(236, 225, 100);
+            grid-area: footer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="body-grid">
+        <header id="header1">logo</header>
+        <header id="header2">nav</header>
+        <main>main</main>
+        <aside>aside</aside>
+        <footer>footer</footer>
+    </div>
+</body>
+
+</html>
