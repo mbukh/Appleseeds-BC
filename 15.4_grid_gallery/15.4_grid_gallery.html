@@ -24,7 +24,6 @@
             --span-w: 4;
             --span-h: 4;
             
-
             /* size | span maths */
             --col-size: calc(100% / var(--cols) - var(--gap));
             --row-size: calc(100% / var(--rows) - var(--gap));
@@ -77,11 +76,6 @@
             object-fit: cover;
         }
 
-        @media (min-width: 500px) {
-            :root {
-                /* --gap: 20px; */
-            }
-        }
     </style>
 </head>
 
@@ -89,7 +83,7 @@
 
     <div id="gallery-grid">
 
-        <div class="image-box" style="--span-h: 4;">
+        <div class="image-box">
             <a href="./img/1.jpeg">
                 <img src="./img/1.jpeg" alt="image #1">
             </a>
@@ -114,7 +108,7 @@
                 <img src="./img/5.jpeg" alt="image #5">
             </a>
         </div>
-        <div class="image-box" style="--span-h: 4;">
+        <div class="image-box" style="">
             <a href="./img/6.jpeg">
                 <img src="./img/6.jpeg" alt="image #6">
             </a>
@@ -124,7 +118,7 @@
                 <img src="./img/7.jpeg" alt="image #7">
             </a>
         </div>
-        <div class="image-box" style="--span-w: 8; --span-h: 4;">
+        <div class="image-box" style="--span-w: 8; ">
             <a href="./img/8.jpeg">
                 <img src="./img/8.jpeg" alt="image #8">
             </a>
@@ -149,7 +143,7 @@
                 <img src="./img/12.jpeg" alt="image #12">
             </a>
         </div>
-        <div class="image-box" style="--span-h: 4;">
+        <div class="image-box" style="">
             <a href="./img/13.jpeg">
                 <img src="./img/13.jpeg" alt="image #13">
             </a>
