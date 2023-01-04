@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15.3_responsive_grid</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+
+            background-color: #333;
+
+            font-size: 1.1rem;
+            color: aliceblue;
+            text-shadow: 1px 1px 5px #3333;
+        }
+
+        h1 {
+            font-size: 1.3rem;
+            align-self: start;
+            margin-bottom: 5px;
+        }
+
+        #body-grid {
+            display: grid;
+            gap: 10px;
+            grid-template-areas:
+                'logo'
+                'nav'
+                'main'
+                'aside'
+                'footer';
+
+            min-height: 30vh;
+            padding: 10px;
+        }
+
+        /* tablet */
+        @media (min-width: 600px) and (max-width: 999px) {
+            #body-grid {
+                /* aspect-ratio: 5/3; */
+                width: 100vw;
+                min-height: 50vh;
+                max-height: 60vh;
+
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: 1fr 2fr 1fr 1fr;
+                grid-template-areas:
+                    'logo   logo    logo    logo'
+                    'nav    main    main    main'
+                    'aside  aside   aside   aside'
+                    'footer footer  footer  footer';
+            }
+        }
+
+        /* desktop */
+        @media (min-width: 1000px) {
+            #body-grid {
+                /* aspect-ratio: 5/3; */
+                width: 100vw;
+                min-height: 50vh;
+                max-height: 60vh;
+
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: 1fr 2fr 1fr;
+                grid-template-areas:
+                    'logo   logo    logo    logo'
+                    'nav    main    main    aside'
+                    'footer footer  footer  footer';
+            }
+        }
+
+        #body-grid>* {
+            border-radius: 1rem;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            padding: 5px 10px;
+        }
+
+        #body-grid>*:nth-child(1) {
+            background-color: rgb(236, 100, 100);
+            grid-area: logo;
+        }
+
+        #body-grid>*:nth-child(2) {
+            background-color: rgb(100, 166, 236);
+            grid-area: nav;
+        }
+
+        #body-grid>*:nth-child(3) {
+            background-color: rgb(100, 236, 123);
+            grid-area: main;
+        }
+
+        #body-grid>*:nth-child(4) {
+            background-color: rgb(236, 100, 184);
+            grid-area: aside;
+        }
+
+        #body-grid>*:nth-child(5) {
+            background-color: rgb(236, 225, 100);
+            grid-area: footer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="body-grid">
+        <header id="header1">Header</header>
+        <header id="header2">Sidebar</header>
+        <main>
+            <h1>Content</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, dolore recusandae. Nulla et officiis
+                excepturi sequi vero maxime esse rerum.</p>
+        </main>
+        <aside>Sidebar2</aside>
+        <footer>Footer</footer>
+    </div>
+</body>
+
+</html>
