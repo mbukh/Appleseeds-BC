@@ -13,19 +13,21 @@
         */
 
         :root {
-            --rows-count: 16;
-            --cols-count: 16;
-
-            --col-size: calc(100% / var(--cols-count) - var(--gap));
-            --row-size: var(--card-size);
-
             --gap: 10px;
 
-            --card-span-w: 1;
-            --card-span-h: 2;
+            /* rows | cols division */
+            --rows: 16;
+            --cols: 16;
 
-            --span-w: calc(2 * var(--card-span-w));
-            --span-h: calc(2 * var(--card-span-h));
+            /* default cell size to screen ratio */
+            /* use inline html to change a specific cell */
+            --span-w: 4;
+            --span-h: 4;
+            
+
+            /* size | span maths */
+            --col-size: calc(100% / var(--cols) - var(--gap));
+            --row-size: calc(100% / var(--rows) - var(--gap));
         }
 
         * {
@@ -49,16 +51,10 @@
             color: #333
         }
 
-        #body-container {
+        #gallery-grid {
             width: 100%;
             height: 100%;
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        #gallery-grid {
             padding: var(--gap);
             gap: var(--gap);
 
@@ -66,6 +62,7 @@
             grid-template-columns: repeat(auto-fit, var(--col-size));
             grid-auto-rows: var(--row-size);
             justify-content: center;
+            align-content:center;
         }
 
         .image-box {
@@ -74,6 +71,7 @@
         }
 
         #gallery-grid img {
+            display: block;
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -81,91 +79,89 @@
 
         @media (min-width: 500px) {
             :root {
-                --row-size: 3rem;
+                /* --row-size: 3rem; */
             }
         }
     </style>
 </head>
 
 <body>
-    <div class="body-container">
 
-        <div id="gallery-grid">
+    <div id="gallery-grid">
 
-            <div class="image-box" style="--card-span-w: inherit;--card-span-h: inherit;">
-                <a href="./img/1.jpeg">
-                    <img src="./img/1.jpeg" alt="image #1">
-                </a>
-            </div>
-            <div class="image-box" style="--card-span-w: inherit;--card-span-h: inherit;">
-                <a href="./img/2.jpeg">
-                    <img src="./img/2.jpeg" alt="image #2">
-                </a>
-            </div>
-            <div class="image-box" style="--card-span-w: inherit;--card-span-h: inherit;">
-                <a href="./img/3.jpeg">
-                    <img src="./img/3.jpeg" alt="image #3">
-                </a>
-            </div>
-            <div class="image-box" style="--card-span-w: inherit;--card-span-h: inherit;">
-                <a href="./img/4.jpeg">
-                    <img src="./img/4.jpeg" alt="image #4">
-                </a>
-            </div>
-            <div class="image-box" style="--card-span-w: inherit;--card-span-h: inherit;">
-                <a href="./img/5.jpeg">
-                    <img src="./img/5.jpeg" alt="image #5">
-                </a>
-            </div>
-            <div class="image-box" style="--card-span-w: inherit;--card-span-h: inherit;">
-                <a href="./img/6.jpeg">
-                    <img src="./img/6.jpeg" alt="image #6">
-                </a>
-            </div>
-            <div class="image-box" style="--card-span-w: inherit;--card-span-h: inherit;">
-                <a href="./img/7.jpeg">
-                    <img src="./img/7.jpeg" alt="image #7">
-                </a>
-            </div>
-            <div class="image-box" style="--card-span-w: inherit;--card-span-h: inherit;">
-                <a href="./img/8.jpeg">
-                    <img src="./img/8.jpeg" alt="image #8">
-                </a>
-            </div>
-            <div class="image-box" style="--card-span-w: inherit;--card-span-h: inherit;">
-                <a href="./img/9.jpeg">
-                    <img src="./img/9.jpeg" alt="image #9">
-                </a>
-            </div>
-            <div class="image-box" style="--card-span-w: inherit;--card-span-h: inherit;">
-                <a href="./img/10.jpeg">
-                    <img src="./img/10.jpeg" alt="image #10">
-                </a>
-            </div>
-            <div class="image-box" style="--card-span-w: inherit;--card-span-h: inherit;">
-                <a href="./img/11.jpeg">
-                    <img src="./img/11.jpeg" alt="image #11">
-                </a>
-            </div>
-            <div class="image-box" style="--card-span-w: inherit;--card-span-h: inherit;">
-                <a href="./img/12.jpeg">
-                    <img src="./img/12.jpeg" alt="image #12">
-                </a>
-            </div>
-            <div class="image-box" style="--card-span-w: inherit;--card-span-h: inherit;">
-                <a href="./img/13.jpeg">
-                    <img src="./img/13.jpeg" alt="image #13">
-                </a>
-            </div>
-            <div class="image-box" style="--card-span-w: inherit;--card-span-h: inherit;">
-                <a href="./img/14.jpeg">
-                    <img src="./img/14.jpeg" alt="image #14">
-                </a>
-            </div>
-
+        <div class="image-box" style="--span-w: inherit; --span-h: 4;">
+            <a href="./img/1.jpeg">
+                <img src="./img/1.jpeg" alt="image #1">
+            </a>
+        </div>
+        <div class="image-box" style="--span-w: inherit; --span-h: 6;">
+            <a href="./img/2.jpeg">
+                <img src="./img/2.jpeg" alt="image #2">
+            </a>
+        </div>
+        <div class="image-box" style="--span-w: inherit; --span-h: inherit;">
+            <a href="./img/3.jpeg">
+                <img src="./img/3.jpeg" alt="image #3">
+            </a>
+        </div>
+        <div class="image-box" style="--span-w: inherit; --span-h: 2;">
+            <a href="./img/4.jpeg">
+                <img src="./img/4.jpeg" alt="image #4">
+            </a>
+        </div>
+        <div class="image-box" style="--span-w: inherit; --span-h: 6;">
+            <a href="./img/5.jpeg">
+                <img src="./img/5.jpeg" alt="image #5">
+            </a>
+        </div>
+        <div class="image-box" style="--span-w: inherit; --span-h: 4;">
+            <a href="./img/6.jpeg">
+                <img src="./img/6.jpeg" alt="image #6">
+            </a>
+        </div>
+        <div class="image-box" style="--span-w: inherit; --span-h: 2;">
+            <a href="./img/7.jpeg">
+                <img src="./img/7.jpeg" alt="image #7">
+            </a>
+        </div>
+        <div class="image-box" style="--span-w: 8; --span-h: 4;">
+            <a href="./img/8.jpeg">
+                <img src="./img/8.jpeg" alt="image #8">
+            </a>
+        </div>
+        <div class="image-box" style="--span-w: inherit; --span-h: inherit;">
+            <a href="./img/9.jpeg">
+                <img src="./img/9.jpeg" alt="image #9">
+            </a>
+        </div>
+        <div class="image-box" style="--span-w: inherit; --span-h: inherit;">
+            <a href="./img/10.jpeg">
+                <img src="./img/10.jpeg" alt="image #10">
+            </a>
+        </div>
+        <div class="image-box" style="--span-w: 6; --span-h: 6;">
+            <a href="./img/11.jpeg">
+                <img src="./img/11.jpeg" alt="image #11">
+            </a>
+        </div>
+        <div class="image-box" style="--span-w: 2; --span-h: 6;">
+            <a href="./img/12.jpeg">
+                <img src="./img/12.jpeg" alt="image #12">
+            </a>
+        </div>
+        <div class="image-box" style="--span-w: inherit; --span-h: 4;">
+            <a href="./img/13.jpeg">
+                <img src="./img/13.jpeg" alt="image #13">
+            </a>
+        </div>
+        <div class="image-box" style="--span-w: inherit; --span-h: inherit;">
+            <a href="./img/14.jpeg">
+                <img src="./img/14.jpeg" alt="image #14">
+            </a>
         </div>
 
     </div>
+
 </body>
 
 </html>
