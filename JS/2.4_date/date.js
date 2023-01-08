@@ -9,11 +9,11 @@ Name of the current day e.g. Sunday
 Create a function that will return a string in the following format:
 `Today is Sunday the 31 of January 2021’
 */
-const fullDate = () => {
+const getFullDate = () => {
     const weekDay = date.toLocaleDateString("en-US", { weekday: "long" });
     const day = date.getDate();
     const month = date.toLocaleDateString("en-US", { month: "long" });
     const year = date.getFullYear();
     return `Today is ${weekDay} the ${day} of ${month} ${year}`;
 };
-h1.innerHTML = fullDate();
+h1.innerHTML = getFullDate();
