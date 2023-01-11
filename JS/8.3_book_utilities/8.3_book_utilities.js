@@ -10,6 +10,11 @@ const book2 = {
 };
 
 const bookUtils = {
+    getFirstPublished: (book1, book2) => {
+        Number.parseInt(book1.year) < Number.parseInt(book2.year)
+            ? book1
+            : book2;
+    },
     setNewEdition: (book, latestEdition) => {
         book.latestEdition = latestEdition;
     },

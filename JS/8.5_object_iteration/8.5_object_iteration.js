@@ -4,6 +4,13 @@ const swap = (obj) =>
         {}
     );
 
+
+{
+    {  
+        asdsad
+    }
+}
+
 const originalObject = { 1: "a", 2: "b", 24: "z", key: "value" };
 console.log(originalObject);
 
