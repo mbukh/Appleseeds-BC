@@ -32,3 +32,15 @@ const newReleases = [
         bookmark: [{ id: 432534, time: 65876586 }],
     },
 ];
+
+const idAndNameArray = (() => {
+    const result = [];
+    newReleases.forEach((el) => result.push({ id: el.id, name: el.title }));
+    return result;
+})();
+console.log(idAndNameArray);
+
+const idAndNameMap = (() => {
+    return newReleases.map((el) => ({ id: el.id, name: el.title }));
+})();
+console.log(idAndNameMap);
