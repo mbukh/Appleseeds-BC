@@ -1,3 +1,5 @@
+let newCellSize = 70;
+
 // Body
 document.body.style.boxSizing = "border-box";
 document.body.style.width = "100vw";
@@ -7,10 +9,29 @@ document.body.style.padding = "10px";
 document.body.style.background = "#030303";
 document.body.style.color = "#030303";
 document.body.style.overflow = "hidden";
+
+// Welcoming words
+const hint = newElement("div", [], {
+    width: "90%",
+    marginInline: "auto",
+    color: "#cccc",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    font: `normal 400 clamp(12px, min(1.5vh, 1.5vw), 18px) sans-serif`,
+    padding: "5px",
+    marginBottom: "5px",
+    textTransform: "uppercase",
+});
+hint.textContent =
+    "resize the window or press [-/+] to resize the grid – find the secret";
+document.body.appendChild(hint);
+
 // Container
 const container = newElement("div", [], {
     width: "100%",
     height: "100%",
+    margin: "auto",
     boxSizing: "border-box",
     border: "1px solid #3c3c3c",
     backgroundColor: "#4158D0",
@@ -18,9 +39,11 @@ const container = newElement("div", [], {
         "linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%)",
 });
 document.body.appendChild(container);
+
 // Global Event Listeners
 window.addEventListener("load", generateGrid);
 window.addEventListener("resize", generateGrid);
+window.addEventListener("keydown", changeCellSize);
 // Generate/Regenerate Grid
 function generateGrid() {
     // Recursive remove old grid
@@ -30,7 +53,7 @@ function generateGrid() {
     container.style.width = "100%";
     container.style.height = "100%";
     // Grid Settings
-    const cellSize = 60;
+    const cellSize = newCellSize;
     const cellCountWidth = Math.floor(container.offsetWidth / cellSize);
     const cellCountHeight = Math.floor(container.offsetHeight / cellSize);
     const mainGrid = newElement("div", ["mainGrid"], {
@@ -92,7 +115,6 @@ function handleMouseOut(e) {
     // e.target.style.color = "transparent";
     e.target.style.transition = "all 0.5s linear";
 }
-
 function getCellContent(textArr = "", cellCountWidth, cellCountHeight, i, j) {
     const perHeight = ((i + 0.5) / cellCountHeight) * 100;
     const perWidth = ((j + 0.5) / cellCountWidth) * 100;
@@ -117,15 +139,30 @@ function getCellContent(textArr = "", cellCountWidth, cellCountHeight, i, j) {
         content = "❤️‍🔥";
     return content;
 }
-
+function changeCellSize(e) {
+    if ((e.keyCode === 189 || e.key === "-") && newCellSize >= 35)
+        newCellSize -= 5;
+    if ((e.keyCode === 187 || e.key === "=") && newCellSize <= 120)
+        newCellSize += 5;
+    generateGrid();
+}
 // Helper Function to create a new html Element
-function newElement(tag = "div", classList = [], style = {}, dataset = {}) {
+function newElement(
+    tag = "div",
+    classList = [],
+    style = {},
+    addInfo = {},
+    dataset = {}
+) {
     const el = document.createElement(tag);
     for (const prop in style) {
         el.style[prop] = style[prop];
     }
     for (const data in dataset) {
         el.dataset[data] = dataset[data];
+    }
+    for (const info in addInfo) {
+        el[info] = addInfo[info];
     }
     el.classList.add(...classList);
     return el;
