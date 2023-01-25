@@ -140,11 +140,14 @@ function getCellContent(textArr = "", cellCountWidth, cellCountHeight, i, j) {
     return content;
 }
 function changeCellSize(e) {
-    if ((e.keyCode === 189 || e.key === "-") && newCellSize >= 35)
+    if ((e.keyCode === 189 || e.key === "-") && newCellSize >= 35) {
         newCellSize -= 5;
-    if ((e.keyCode === 187 || e.key === "=") && newCellSize <= 120)
+        generateGrid();
+    }
+    if ((e.keyCode === 187 || e.key === "=") && newCellSize <= 120) {
         newCellSize += 5;
-    generateGrid();
+        generateGrid();
+    }
 }
 // Helper Function to create a new html Element
 function newElement(
