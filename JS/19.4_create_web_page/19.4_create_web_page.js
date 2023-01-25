@@ -81,13 +81,13 @@ function generateGrid() {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    font: `normal 400 ${cellSize / 4}px sans-serif`,
+                    font: `normal 400 ${cellSize / 5}px sans-serif`,
                     color: "transparent",
                 },
                 { winner: "MOshe" }
             );
             cell.textContent = getCellContent(
-                ["I", "MBUKH", "JS"],
+                ["DEV", "MBUKH"],
                 cellCountWidth,
                 cellCountHeight,
                 i,
