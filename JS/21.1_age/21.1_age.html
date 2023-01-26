@@ -1,5 +1,46 @@
-<!DOCTYPE html><html lang="en"><head>    <meta charset="UTF-8">    <meta http-equiv="X-UA-Compatible" content="IE=edge">    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <script src="./21.1_age.js" defer></script>    <title>21.1_age</title></head>
-<body>
-</body></html>
+    <script src="./21.1_age.js" defer></script>
+    <style>
+        body {
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+        }
+
+        form {
+            position: relative;
+        }
+
+        form::after {
+            content: attr(data-error);
+            color: red;
+            position: absolute;
+            padding-left: 10px;
+            min-width: 100%;
+            display: inline-block;
+        }
+
+        input {
+            font-size: inherit;
+        }
+    </style>
+    <title>21.1_age</title>
+</head>
+
+<body>
+    <form action="" data-error="">
+        <input type="text" name="age" id="age">
+        <input type="submit" name="submit" value="submit">
+    </form>
+</body>
+
+</html>
