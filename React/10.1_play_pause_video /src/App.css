@@ -1,0 +1,94 @@
+@import url(https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css);
+
+body {
+    background: #eeeeee;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    color: white;
+}
+
+video {
+    width: 100%;
+}
+
+.video-wrapper {
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.video-wrapper:hover .controls {
+    transform: translateY(0%);
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: absolute;
+    bottom: 30px;
+    padding: 14px;
+    width: 100%;
+    max-width: 600px;
+    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    transform: translateY(150%);
+    transition: all 0.3s ease-in-out;
+}
+
+.actions button {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.actions button i {
+    background-color: none;
+    color: white;
+    font-size: 30px;
+}
+
+input[type="range"] {
+    /* appearance: none; */
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    height: 6px;
+    width: 350px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    /* appearance: none; */
+    cursor: pointer;
+    height: 6px;
+}
+
+input[type="range"]::-moz-range-progress {
+    background: white;
+}
+
+.velocity {
+    appearance: none;
+    background: none;
+    color: white;
+    outline: none;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+}
