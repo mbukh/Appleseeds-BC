@@ -1,0 +1,22 @@
+.Box {
+    background-color: hotpink;
+    border: 1px solid purple;
+
+    position: relative;
+    left: -100px; /* Start off the screen */
+    animation-name: slide-in;
+    animation-duration: 2s;
+    animation-fill-mode: forwards; /* Keeps the box in the final position after the animation ends */
+    animation-timing-function: ease;
+
+    display: block;
+}
+
+@keyframes slide-in {
+    from {
+        left: -1000px;
+    }
+    to {
+        left: 0px;
+    }
+}
