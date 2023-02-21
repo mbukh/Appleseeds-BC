@@ -1,0 +1,35 @@
+.filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.filter input {
+    width: 400px;
+    height: 30px;
+    font-size: 1.1em;
+}
+
+.user-list {
+    margin-top: 2em;
+    display: flex;
+    gap: 2em;
+    flex-wrap: wrap;
+}
+
+.user .image-wrapper {
+    padding: 0.5em;
+    border-radius: 50%;
+    border: 1px solid #bbb;
+}
+
+.user img {
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+}
