@@ -26,6 +26,7 @@ const Filter = ({ users, setFilteredUsers }) => {
                 )
             );
         }, 500);
+        // Debouncing
         // Clear timeout if searchText changes before the timeout has completed
         return () => clearTimeout(timeout);
     }, [searchText, setFilteredUsers, users]);
