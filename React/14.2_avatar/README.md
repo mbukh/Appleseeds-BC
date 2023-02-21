@@ -2,6 +2,8 @@
 
 This is a simple React application that fetches a list of users from the [randomuser.me](https://randomuser.me/) API and allows the user to filter the results by name using a search input.
 
+![User Filter App Screenshot](user_filter_app.jpeg)
+
 ## Installation
 
 To run this app on your local machine, follow these steps:
@@ -22,7 +24,7 @@ If there are no users found with the current search criteria, the app will displ
 The app is made up of the following components:
 
 -   `App`: The main component that fetches the users data and renders the `Filter` and `UserList` components.
--   `Filter`: A component that renders a search input and filters the users data based on the search text.
+-   `Filter`: A component that renders a search input and filters the users data based on the search text using debouncing to reduce component re-renderings.
 -   `UserList`: A component that renders a list of `User` components.
 -   `User`: A component that renders an individual user card.
 
