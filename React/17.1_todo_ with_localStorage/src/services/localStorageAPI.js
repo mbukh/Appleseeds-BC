@@ -1,28 +1,32 @@
-import uniqid from "uniqid";
+import { v4 as uuidv4 } from "uuid";
 
 const read = () => {
-  return JSON.parse(localStorage.getItem("recordList"));
+    let dataArr = JSON.parse(localStorage.getItem("recordList")) || [];
+    return dataArr;
 };
 
-const update = (recordsList) => {
-  localStorage.setItem("recordList", JSON.stringify(recordsList));
+const remove = (recordID, write = true) => {
+    const dataArr = read();
+    const updatedDataArr = dataArr.filter((rec) => rec.id !== recordID);
+    write && localStorage.setItem("recordList", JSON.stringify(updatedDataArr));
+    return updatedDataArr;
 };
 
-const remove = (recordID) => {
-  const list = read();
-  for (let i in list) {
-    if (list[i].id === recordID) list.splice(i, 1);
-  }
-  update(list);
+const create = (recordData, write = true) => {
+    const dataArr = read();
+    const newRecord = { id: uuidv4(), ...recordData, date: Date.now() };
+    const updatedDataArr = [newRecord, ...dataArr];
+    localStorage.setItem("recordList", JSON.stringify(updatedDataArr));
+    return newRecord;
 };
 
-const create = (record) => {
-  const list = read();
-  const todo = record;
-  todo["id"] = uniqid();
-
-  list.push(record);
-  update(list);
+const update = (recordID, recordData) => {
+    const dataArr = read();
+    const index = dataArr.findIndex((rec) => rec.id === recordID);
+    dataArr[index] = { ...recordData };
+    localStorage.setItem("recordList", JSON.stringify(dataArr));
+    return dataArr;
 };
 
-export { read, update, remove, create };
+const api = { create, read, update, remove };
+export default api;
