@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Icon, Card, Checkbox, Typography, Divider, Link } from "tiny-ui";
+import { Icon, Card, Typography } from "tiny-ui";
 
 export const Record = ({
     record,
