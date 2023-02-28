@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+div.box {
+    position: absolute;
+    left: -100%;
+    width: 100px;
+    height: 100px;
+    background-color: #333;
+    color: #fff;
+
+    animation: moveIn 3s ease 0.5s forwards;
+}
+
+@keyframes moveIn {
+    0%,
+    100% {
+        left: -100%;
+    }
+    30%,
+    60% {
+        left: 0;
+    }
+}

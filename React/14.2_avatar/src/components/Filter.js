@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 
 const Filter = ({ users, setFilteredUsers }) => {
     const [searchText, setSearchText] = useState("");

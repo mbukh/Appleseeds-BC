@@ -39,6 +39,7 @@ const RecordList = ({
                 ))
             ) : (
                 <>
+                    <br />
                     <Divider />
                     <Empty />
                 </>
