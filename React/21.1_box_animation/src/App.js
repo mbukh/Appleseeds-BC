@@ -2,14 +2,22 @@ import "./App.css";
 import { Component } from "react";
 
 class Box extends Component {
-    constructor({ style }) {
+    constructor(props) {
         super();
-        this.style = style;
+        this.props = props;
     }
 
     render() {
         return (
-            <div className="box" style={this.style}>
+            <div
+                className="box"
+                style={{
+                    top: this.props.top,
+                    width: this.props.width,
+                    height: this.props.height,
+                    backgroundColor: this.props.backgroundColor,
+                }}
+            >
                 BOX
             </div>
         );
@@ -34,28 +42,22 @@ class App extends Component {
             this.state.mountBox && (
                 <>
                     <Box
-                        style={{
-                            top: "0",
-                            width: "100px",
-                            height: "100px",
-                            backgroundColor: "#a33",
-                        }}
+                        top="0"
+                        width="100px"
+                        height="100px"
+                        backgroundColor="#a33"
                     />
                     <Box
-                        style={{
-                            top: "110px",
-                            width: "200px",
-                            height: "200px",
-                            backgroundColor: "#3a3",
-                        }}
+                        top="110px"
+                        width="200px"
+                        height="200px"
+                        backgroundColor="#3a3"
                     />
                     <Box
-                        style={{
-                            top: "320px",
-                            width: "300px",
-                            height: "300px",
-                            backgroundColor: "#33a",
-                        }}
+                        top="320px"
+                        width="300px"
+                        height="300px"
+                        backgroundColor="#33a"
                     />
                 </>
             )
