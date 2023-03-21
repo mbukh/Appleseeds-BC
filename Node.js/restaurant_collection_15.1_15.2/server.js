@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import colors from 'colors';
 import morgan from 'morgan';
 
-import shops from './routes/shopRoutes.js';
+import restaurants from './routes/restaurantRoutes.js';
 
 import errorHandler from './middleware/errorHandler.js';
 
@@ -24,11 +24,11 @@ if (process.env.NODE_ENV !== 'production') {
 
 app.get('/', (req, res) => {
   res.json({
-    message: 'Welcome to Shop API'
+    message: 'Welcome to Restaurant API'
   });
 });
 
-app.use('/api/v1/shops', shops);
+app.use('/api/v1/restaurants', restaurants);
 
 app.use(errorHandler);
 

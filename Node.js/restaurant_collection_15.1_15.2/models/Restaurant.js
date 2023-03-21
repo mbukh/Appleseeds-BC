@@ -11,11 +11,11 @@ import mongoose from 'mongoose';
 // ●	 an integer score
 
 
-const ShopSchema = new mongoose.Schema({
+const RestaurantSchema = new mongoose.Schema({
   name: {
     type: String,
     required: [true, 'Please add a name'],
-    unique: [true, 'Shop name already exists'],
+    unique: [true, 'Restaurant name already exists'],
     trim: true,
     maxlength: [50, 'Name can not be more than 50 characters']
   },
@@ -53,9 +53,9 @@ const ShopSchema = new mongoose.Schema({
 });
 
 // Middleware - Create slug from name
-// ShopSchema.pre('save', function (next) {
+// RestaurantSchema.pre('save', function (next) {
 //   this.slug = slugify(this.name, { lower: true });
 //   next();
 // });
 
-export default mongoose.model('Shop', ShopSchema);
+export default mongoose.model('Restaurant', RestaurantSchema);

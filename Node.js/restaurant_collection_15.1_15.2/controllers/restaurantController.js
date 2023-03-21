@@ -1,10 +1,10 @@
 import asyncHandler from "../middleware/asyncHandler.js";
-import Shop from "../models/Shop.js";
+import Restaurant from "../models/Restaurant.js";
 
-// @desc    Get all Shops
-// @route   GET /api/v1/shops
+// @desc    Get all Restaurants
+// @route   GET /api/v1/restaurants
 // @access  Public
-export const getShops = asyncHandler(async (req, res, next) => {
+export const getRestaurants = asyncHandler(async (req, res, next) => {
   // console.log('typeof JSON.parse(req.query.coordinates)', JSON.parse(req.query.coordinates));
 
   const queryObject = {
@@ -19,49 +19,49 @@ export const getShops = asyncHandler(async (req, res, next) => {
 
   console.log("QueryObject:", queryObject);
 
-  const shops = await Shop.find(queryObject);
-  console.log(shops)
+  const restaurants = await Restaurant.find(queryObject);
+  console.log(restaurants)
 
   res.status(200).json({
     success: true,
-    data: shops
+    data: restaurants
   });
 });
 
-// @desc    Create a Shop
-// @route   POST /api/v1/shops
+// @desc    Create a Restaurant
+// @route   POST /api/v1/restaurants
 // @access  Private
-export const createShop = asyncHandler(async (req, res, next) => {
+export const createRestaurant = asyncHandler(async (req, res, next) => {
   console.log(req.body);
-  const shop = await Shop.create(req.body);
+  const restaurant = await Restaurant.create(req.body);
 
   res.status(200).json({
     success: true,
-    data: shop
+    data: restaurant
   });
 });
 
-// @desc    Get a single Shop
-// @route   GET /api/v1/shops/:id
+// @desc    Get a single Restaurant
+// @route   GET /api/v1/restaurants/:id
 // @access  Public
-export const getShop = asyncHandler(async (req, res, next) => {
-  const shop = await Shop.findById(req.params.id);
+export const getRestaurant = asyncHandler(async (req, res, next) => {
+  const restaurant = await Restaurant.findById(req.params.id);
 
-  if (!shop) {
+  if (!restaurant) {
     return next(new Error(`Bootcamp with id: ${req.params.id} not found`));
   }
 
   res.status(200).json({
     success: true,
-    data: shop
+    data: restaurant
   });
 });
 
-// @desc    Upadte a Shop
-// @route   PUT /api/v1/shops/:id
+// @desc    Upadte a Restaurant
+// @route   PUT /api/v1/restaurants/:id
 // @access  Private
-export const updateShop = asyncHandler(async (req, res, next) => {
-  const restaurant = await Shop.findByIdAndUpdate(req.params.id, req.body, {
+export const updateRestaurant = asyncHandler(async (req, res, next) => {
+  const restaurant = await Restaurant.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
     runValidators: true
   });
@@ -80,18 +80,18 @@ export const updateShop = asyncHandler(async (req, res, next) => {
   });
 });
 
-// @desc    Delete a Shop
-// @route   DELETE /api/v1/shops/:id
+// @desc    Delete a Restaurant
+// @route   DELETE /api/v1/restaurants/:id
 // @access  Private
-export const deleteShop = asyncHandler(async (req, res, next) => {
-  const shop = await Shop.findByIdAndDelete(req.params.id);
+export const deleteRestaurant = asyncHandler(async (req, res, next) => {
+  const restaurant = await Restaurant.findByIdAndDelete(req.params.id);
 
-  if (!shop) {
+  if (!restaurant) {
     return next(new Error(`restaurant with id: ${req.params.id} not found`));
   }
 
   res.status(200).json({
     success: true,
-    data: shop
+    data: restaurant
   });
 });
